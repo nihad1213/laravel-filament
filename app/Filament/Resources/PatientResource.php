@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use function Laravel\Prompts\search;
 
 class PatientResource extends Resource
 {
@@ -60,10 +61,12 @@ class PatientResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('type'),
                 Tables\Columns\TextColumn::make('date_of_birth'),
-                Tables\Columns\TextColumn::make('owner.name'),
+                Tables\Columns\TextColumn::make('owner.name')
+                    ->searchable(),
             ])
             ->filters([
                 //
