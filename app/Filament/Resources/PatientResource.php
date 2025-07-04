@@ -60,7 +60,10 @@ class PatientResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('type'),
+                Tables\Columns\TextColumn::make('date_of_birth'),
+                Tables\Columns\TextColumn::make('owner.name'),
             ])
             ->filters([
                 //
