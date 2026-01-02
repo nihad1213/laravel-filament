@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Platforms\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
 
 class PlatformForm
 {
@@ -10,7 +11,9 @@ class PlatformForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 }
