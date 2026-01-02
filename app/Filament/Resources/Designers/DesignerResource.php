@@ -18,7 +18,7 @@ class DesignerResource extends Resource
 {
     protected static ?string $model = Designer::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
 
     protected static ?string $recordTitleAttribute = 'Designer';
 
