@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Tags\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 
 class TagForm
 {
@@ -10,7 +12,17 @@ class TagForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Select::make('type')
+                    ->required()
+                    ->options([
+                        'theme' => 'Theme',
+                        'gameplay' => 'Gameplay',
+                        'setting' => 'Setting',
+                        'feature' => 'Feature',
+                    ])
             ]);
     }
 }
