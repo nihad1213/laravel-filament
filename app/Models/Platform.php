@@ -9,17 +9,12 @@ class Platform extends Model
 {
     protected $fillable = [
         'name',
-        'slug',
         'manufacturer',
-        'type',
         'release_date',
-        'icon',
-        'is_active',
     ];
 
     protected $casts = [
         'release_date' => 'date',
-        'is_active' => 'boolean',
     ];
 
     public function games(): BelongsToMany
